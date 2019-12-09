@@ -13,289 +13,432 @@
   <ItemGroup>
     <ClCompile Include="agentf.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="aqsync.c">
+    </ClCompile>
+    <ClCompile Include="aqsync.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="be_misc.c">
+    </ClCompile>
+    <ClCompile Include="be_misc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="be_ssh.c">
+    </ClCompile>
+    <ClCompile Include="be_ssh.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="callback.c">
+    </ClCompile>
+    <ClCompile Include="callback.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="cmdline.c">
+    </ClCompile>
+    <ClCompile Include="cmdline.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="conf.c">
+    </ClCompile>
+    <ClCompile Include="conf.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="cproxy.c">
+    </ClCompile>
+    <ClCompile Include="cproxy.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ecc.c">
+    </ClCompile>
+    <ClCompile Include="ecc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="errsock.c">
+    </ClCompile>
+    <ClCompile Include="errsock.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="logging.c">
+    </ClCompile>
+    <ClCompile Include="logging.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="mainchan.c">
+    </ClCompile>
+    <ClCompile Include="mainchan.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="marshal.c">
+    </ClCompile>
+    <ClCompile Include="marshal.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="memory.c">
+    </ClCompile>
+    <ClCompile Include="memory.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="misc.c">
+    </ClCompile>
+    <ClCompile Include="misc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="miscucs.c">
+    </ClCompile>
+    <ClCompile Include="miscucs.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="mpint.c">
+    </ClCompile>
+    <ClCompile Include="mpint.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="nullplug.c">
+    </ClCompile>
+    <ClCompile Include="nullplug.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="pgssapi.c">
+    </ClCompile>
+    <ClCompile Include="pgssapi.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="pinger.c">
+    </ClCompile>
+    <ClCompile Include="pinger.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="portfwd.c">
+    </ClCompile>
+    <ClCompile Include="portfwd.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="proxy.c">
+    </ClCompile>
+    <ClCompile Include="proxy.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="psftp.c">
+    </ClCompile>
+    <ClCompile Include="psftp.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="psftpcommon.c">
+    </ClCompile>
+    <ClCompile Include="psftpcommon.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="settings.c">
+    </ClCompile>
+    <ClCompile Include="settings.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sftp.c">
+    </ClCompile>
+    <ClCompile Include="sftp.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sftpcommon.c">
+    </ClCompile>
+    <ClCompile Include="sftpcommon.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh.c">
+    </ClCompile>
+    <ClCompile Include="ssh.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh1bpp.c">
+    </ClCompile>
+    <ClCompile Include="ssh1bpp.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh1censor.c">
+    </ClCompile>
+    <ClCompile Include="ssh1censor.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh1connection-client.c">
+    </ClCompile>
+    <ClCompile Include="ssh1connection-client.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh1connection.c">
+    </ClCompile>
+    <ClCompile Include="ssh1connection.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh1login.c">
+    </ClCompile>
+    <ClCompile Include="ssh1login.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2bpp-bare.c">
+    </ClCompile>
+    <ClCompile Include="ssh2bpp-bare.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2bpp.c">
+    </ClCompile>
+    <ClCompile Include="ssh2bpp.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2censor.c">
+    </ClCompile>
+    <ClCompile Include="ssh2censor.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2connection-client.c">
+    </ClCompile>
+    <ClCompile Include="ssh2connection-client.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2connection.c">
+    </ClCompile>
+    <ClCompile Include="ssh2connection.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2kex-client.c">
+    </ClCompile>
+    <ClCompile Include="ssh2kex-client.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2transhk.c">
+    </ClCompile>
+    <ClCompile Include="ssh2transhk.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2transport.c">
+    </ClCompile>
+    <ClCompile Include="ssh2transport.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssh2userauth.c">
+    </ClCompile>
+    <ClCompile Include="ssh2userauth.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshaes.c">
+    </ClCompile>
+    <ClCompile Include="sshaes.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="ssharcf.c">
+    </ClCompile>
+    <ClCompile Include="ssharcf.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshauxcrypt.c">
+    </ClCompile>
+    <ClCompile Include="sshauxcrypt.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshblowf.c">
+    </ClCompile>
+    <ClCompile Include="sshblowf.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshccp.c">
+    </ClCompile>
+    <ClCompile Include="sshccp.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshcommon.c">
+    </ClCompile>
+    <ClCompile Include="sshcommon.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshcrc.c">
+    </ClCompile>
+    <ClCompile Include="sshcrc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshcrcda.c">
+    </ClCompile>
+    <ClCompile Include="sshcrcda.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshdes.c">
+    </ClCompile>
+    <ClCompile Include="sshdes.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshdh.c">
+    </ClCompile>
+    <ClCompile Include="sshdh.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshdss.c">
+    </ClCompile>
+    <ClCompile Include="sshdss.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshecc.c">
+    </ClCompile>
+    <ClCompile Include="sshecc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshgssc.c">
+    </ClCompile>
+    <ClCompile Include="sshgssc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshhmac.c">
+    </ClCompile>
+    <ClCompile Include="sshhmac.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshmac.c">
+    </ClCompile>
+    <ClCompile Include="sshmac.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshmd5.c">
+    </ClCompile>
+    <ClCompile Include="sshmd5.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshprng.c">
+    </ClCompile>
+    <ClCompile Include="sshprng.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshpubk.c">
+    </ClCompile>
+    <ClCompile Include="sshpubk.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshrand.c">
+    </ClCompile>
+    <ClCompile Include="sshrand.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshrsa.c">
+    </ClCompile>
+    <ClCompile Include="sshrsa.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshsh256.c">
+    </ClCompile>
+    <ClCompile Include="sshsh256.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshsh512.c">
+    </ClCompile>
+    <ClCompile Include="sshsh512.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshsha.c">
+    </ClCompile>
+    <ClCompile Include="sshsha.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshshare.c">
+    </ClCompile>
+    <ClCompile Include="sshshare.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshverstring.c">
+    </ClCompile>
+    <ClCompile Include="sshverstring.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="sshzlib.c">
+    </ClCompile>
+    <ClCompile Include="sshzlib.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="stripctrl.c">
+    </ClCompile>
+    <ClCompile Include="stripctrl.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="timing.c">
+    </ClCompile>
+    <ClCompile Include="timing.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="tree234.c">
+    </ClCompile>
+    <ClCompile Include="tree234.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="utils.c">
+    </ClCompile>
+    <ClCompile Include="utils.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="version.c">
+    </ClCompile>
+    <ClCompile Include="version.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="wcwidth.c">
+    </ClCompile>
+    <ClCompile Include="wcwidth.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="wildcard.c">
+    </ClCompile>
+    <ClCompile Include="wildcard.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\wincapi.c">
+    </ClCompile>
+    <ClCompile Include="windows\wincapi.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\wincons.c">
+    </ClCompile>
+    <ClCompile Include="windows\wincons.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\windefs.c">
+    </ClCompile>
+    <ClCompile Include="windows\windefs.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\wingss.c">
+    </ClCompile>
+    <ClCompile Include="windows\wingss.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winhandl.c">
+    </ClCompile>
+    <ClCompile Include="windows\winhandl.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winhsock.c">
+    </ClCompile>
+    <ClCompile Include="windows\winhsock.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winmisc.c">
+    </ClCompile>
+    <ClCompile Include="windows\winmisc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winmiscs.c">
+    </ClCompile>
+    <ClCompile Include="windows\winmiscs.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winnet.c">
+    </ClCompile>
+    <ClCompile Include="windows\winnet.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winnohlp.c">
+    </ClCompile>
+    <ClCompile Include="windows\winnohlp.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winnoise.c">
+    </ClCompile>
+    <ClCompile Include="windows\winnoise.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winnojmp.c">
+    </ClCompile>
+    <ClCompile Include="windows\winnojmp.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winnpc.c">
+    </ClCompile>
+    <ClCompile Include="windows\winnpc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winnps.c">
+    </ClCompile>
+    <ClCompile Include="windows\winnps.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winpgntc.c">
+    </ClCompile>
+    <ClCompile Include="windows\winpgntc.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winproxy.c">
+    </ClCompile>
+    <ClCompile Include="windows\winproxy.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winsecur.c">
+    </ClCompile>
+    <ClCompile Include="windows\winsecur.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winsftp.c">
+    </ClCompile>
+    <ClCompile Include="windows\winsftp.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winshare.c">
+    </ClCompile>
+    <ClCompile Include="windows\winshare.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winstore.c">
+    </ClCompile>
+    <ClCompile Include="windows\winstore.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\wintime.c">
+    </ClCompile>
+    <ClCompile Include="windows\wintime.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="windows\winucs.c">
+    </ClCompile>
+    <ClCompile Include="windows\winucs.c">
       <Filter>Source Files</Filter>
-    </ClCompile>    <ClCompile Include="x11fwd.c">
+    </ClCompile>
+    <ClCompile Include="x11fwd.c">
       <Filter>Source Files</Filter>
-    </ClCompile>  </ItemGroup>
+    </ClCompile>
+    <ClCompile Include="sftpcallback.c" />
+  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="charset\charset.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="defs.h">
+    </ClInclude>
+    <ClInclude Include="defs.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="ecc.h">
+    </ClInclude>
+    <ClInclude Include="ecc.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="empty.h">
+    </ClInclude>
+    <ClInclude Include="empty.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="licence.h">
+    </ClInclude>
+    <ClInclude Include="licence.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="marshal.h">
+    </ClInclude>
+    <ClInclude Include="marshal.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="misc.h">
+    </ClInclude>
+    <ClInclude Include="misc.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="mpint.h">
+    </ClInclude>
+    <ClInclude Include="mpint.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="mpint_i.h">
+    </ClInclude>
+    <ClInclude Include="mpint_i.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="network.h">
+    </ClInclude>
+    <ClInclude Include="network.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="noshare.c">
+    </ClInclude>
+    <ClInclude Include="noshare.c">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="pageant.h">
+    </ClInclude>
+    <ClInclude Include="pageant.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="pgssapi.h">
+    </ClInclude>
+    <ClInclude Include="pgssapi.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="proxy.h">
+    </ClInclude>
+    <ClInclude Include="proxy.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="psftp.h">
+    </ClInclude>
+    <ClInclude Include="psftp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="putty.h">
+    </ClInclude>
+    <ClInclude Include="putty.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="puttymem.h">
+    </ClInclude>
+    <ClInclude Include="puttymem.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="puttyps.h">
+    </ClInclude>
+    <ClInclude Include="puttyps.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sftp.h">
+    </ClInclude>
+    <ClInclude Include="sftp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="ssh.h">
+    </ClInclude>
+    <ClInclude Include="ssh.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="ssh1connection.h">
+    </ClInclude>
+    <ClInclude Include="ssh1connection.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="ssh2connection.h">
+    </ClInclude>
+    <ClInclude Include="ssh2connection.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="ssh2transport.h">
+    </ClInclude>
+    <ClInclude Include="ssh2transport.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshblowf.h">
+    </ClInclude>
+    <ClInclude Include="sshblowf.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshbpp.h">
+    </ClInclude>
+    <ClInclude Include="sshbpp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshchan.h">
+    </ClInclude>
+    <ClInclude Include="sshchan.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshcr.h">
+    </ClInclude>
+    <ClInclude Include="sshcr.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshgss.h">
+    </ClInclude>
+    <ClInclude Include="sshgss.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshgssc.h">
+    </ClInclude>
+    <ClInclude Include="sshgssc.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshppl.h">
+    </ClInclude>
+    <ClInclude Include="sshppl.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshserver.h">
+    </ClInclude>
+    <ClInclude Include="sshserver.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshsignals.h">
+    </ClInclude>
+    <ClInclude Include="sshsignals.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="sshttymodes.h">
+    </ClInclude>
+    <ClInclude Include="sshttymodes.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="storage.h">
+    </ClInclude>
+    <ClInclude Include="storage.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="terminal.h">
+    </ClInclude>
+    <ClInclude Include="terminal.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="tree234.h">
+    </ClInclude>
+    <ClInclude Include="tree234.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="unix\unix.h">
+    </ClInclude>
+    <ClInclude Include="unix\unix.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="version.h">
+    </ClInclude>
+    <ClInclude Include="version.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="windows\rcstuff.h">
+    </ClInclude>
+    <ClInclude Include="windows\rcstuff.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="windows\wincapi.h">
+    </ClInclude>
+    <ClInclude Include="windows\wincapi.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="windows\winhelp.h">
+    </ClInclude>
+    <ClInclude Include="windows\winhelp.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="windows\winsecur.h">
+    </ClInclude>
+    <ClInclude Include="windows\winsecur.h">
       <Filter>Header Files</Filter>
-    </ClInclude>    <ClInclude Include="windows\winstuff.h">
+    </ClInclude>
+    <ClInclude Include="windows\winstuff.h">
       <Filter>Header Files</Filter>
-    </ClInclude>  </ItemGroup>
+    </ClInclude>
+    <ClInclude Include="sftpcallback.h" />
+  </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
       <UniqueIdentifier>{156ce40f-dc1b-4721-b08f-6336b9f4d290}</UniqueIdentifier>

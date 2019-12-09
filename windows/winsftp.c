@@ -11,6 +11,7 @@
 #include "psftp.h"
 #include "ssh.h"
 #include "winsecur.h"
+#include "sftpcallback.h"
 
 int filexfer_get_userpass_input(Seat *seat, prompts_t *p, bufchain *input)
 {
@@ -821,4 +822,39 @@ int main(int argc, char *argv[])
     ret = psftp_main(argc, argv);
 
     return ret;
+}
+
+INT WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd )
+{
+	int ret;
+
+	dll_hijacking_protection();
+
+	//ret = psftp_main(argc, argv);
+	WINTERM   WinTerm = {
+	sftp_win_create,
+	sftp_win_resize,
+	sftp_win_set_pos,
+	sftp_win_set_visible, 
+	sftp_win_term_paint,
+	NULL,
+	50
+	};
+
+
+	HWND hWnd = WinTerm.create(NULL, hInstance);
+	WinTerm.set_visible(hWnd, true);
+	RECT rt = { 0 };
+	GetWindowRect(GetDesktopWindow(), &rt);
+	WinTerm.resize(hWnd, &rt);
+	//WinTerm.set_pos(hWnd, 0, 0, rt.right - rt.left, rt.bottom - rt.top);
+	
+	MSG msg; 
+	while ( ret = GetMessage(&msg, NULL, 0, 0) )
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+
+	return ret;
 }
