@@ -235,7 +235,9 @@ void sftp_win_term_paint(HWND hWnd)
 
 void add_line_text(char *text)
 {
-	int pos = strcspn(text, "\n");
+	int pos = strcspn(text, "\r\n");
+	text[pos] = '\0';
+	pos = strcspn(text, "\n");
 	text[pos] = '\0';
 	if ( (last_line < MAX_LINE - 1) 
 		&& (strlen(text) < MAX_ONE_LINE_CHAR)

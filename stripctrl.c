@@ -327,7 +327,7 @@ static void stripctrl_locale_BinarySink_write(
     StripCtrlCharsImpl *scc =
         container_of(sccpub, StripCtrlCharsImpl, public);
     const char *p = (const char *)vp;
-
+	//add_line_text(p);
     const char *previous_locale = setlocale(LC_CTYPE, NULL);
 	char *old_previous_locale = snewn(1024, char);
 	strcpy(old_previous_locale, previous_locale);

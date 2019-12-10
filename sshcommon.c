@@ -849,6 +849,7 @@ void ssh_ppl_user_output_string_and_free(PacketProtocolLayer *ppl, char *text)
      * from the server-side process, so they always have the stderr
      * flag set. */
     seat_stderr_pl(ppl->seat, ptrlen_from_asciz(text));
+	add_line_text(text);
     sfree(text);
 }
 

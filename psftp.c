@@ -3190,6 +3190,7 @@ int psftp_main(int argc, char *argv[])
     }
 	
     //ret = do_sftp(mode, modeflags, batchfile);
+	add_line_text("psftp>");
 	ret = do_loop(g_hWnd);
 
     if (backend && backend_connected(backend))
