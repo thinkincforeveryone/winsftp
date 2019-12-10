@@ -20,6 +20,7 @@ TCHAR szBuffer[10];
 TEXTMETRIC tm;
 char *lines[MAX_LINE];
 unsigned int last_line = 0;
+int g_scroll_pos = 0;
 
 
 void initLines()
@@ -98,8 +99,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		return 0; 
 	case WM_CHAR:  
 		do_key_input(wParam, lParam);
+		break; 
+	case WM_MOUSEHWHEEL:
+	case WM_MOUSEWHEEL:
+	{ 
+		INT zDelta = GET_WHEEL_DELTA_WPARAM(wParam); 
+		set_scroll_pos(g_scroll_pos - zDelta / cyChar);
+	}
 		break;
-
 	case WM_PAINT:
 		sftp_win_term_paint(hWnd);
 		return 0;
@@ -234,20 +241,20 @@ void add_line_text(char *text)
 		&& (strlen(text) < MAX_ONE_LINE_CHAR)
 		)
 	{
-		strcpy(lines[++last_line], text); 
-		//PostMessage(g_hWnd, WM_PAINT, NULL, NULL);
-		//RedrawWindow(g_hWnd, NULL, NULL, RDW_INTERNALPAINT); 
-
-
-		si.nPos = last_line - cyClient / cyChar + 1;
-		si.fMask = SIF_POS;
-		SetScrollInfo(g_hWnd, SB_VERT, &si, TRUE); 
-		ScrollWindow(g_hWnd, 0, cyChar * si.nPos, NULL, NULL);  
-
-
-		//InvalidateRect(g_hWnd, NULL, false);
+		strcpy(lines[++last_line], text);  
+		set_scroll_pos(last_line - cyClient / cyChar + 1);  
 	}
 	
+}
+
+void set_scroll_pos(int pos)
+{
+	g_scroll_pos = pos;
+	si.nPos = pos;
+	si.fMask = SIF_POS;
+	SetScrollInfo(g_hWnd, SB_VERT, &si, TRUE);
+	ScrollWindow(g_hWnd, 0, cyChar * si.nPos, NULL, NULL);
+	InvalidateRect(g_hWnd, NULL, true);
 }
 
 DWORD WINAPI thead_do_sftp(LPVOID lpThreadParameter)
@@ -339,10 +346,18 @@ void do_key_input(WPARAM wParam, LPARAM lParam)
 	}
 	else
 	{
-		strcmd[pos++] = wParam;
 		int len = strlen(lines[last_line]);
-		*(char*)(lines[last_line]+ len) = wParam;
-		InvalidateRect(g_hWnd, NULL, false);
+		if (wParam == 8 && (pos > 0) )
+		{
+			strcmd[--pos] = '\0'; 
+			*(char*)(lines[last_line] + len -1) = '\0';
+		}
+		else if( wParam != 8)
+		{
+			strcmd[pos++] = wParam;
+			*(char*)(lines[last_line] + len) = wParam;
+		} 
+		InvalidateRect(g_hWnd, NULL, true);
 	}
 }
 
@@ -368,6 +383,7 @@ INT WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	WinTerm.set_visible(hWnd, true);
 	RECT rt = { 0 };
 	GetWindowRect(GetDesktopWindow(), &rt);
+	rt.bottom -= 35;
 	WinTerm.resize(hWnd, &rt);
 	//WinTerm.set_pos(hWnd, 0, 0, rt.right - rt.left, rt.bottom - rt.top);
 

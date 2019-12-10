@@ -18,7 +18,7 @@ void add_line_text(char *text);
  int psft_printf(char const* const _Format, ...);
  int do_loop(HWND hWnd);
  void do_key_input(WPARAM wParam, LPARAM lParam);
-
+ void set_scroll_pos(int pos);
 
 
 typedef struct tagWINTERM
