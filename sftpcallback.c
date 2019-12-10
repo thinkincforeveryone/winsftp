@@ -228,14 +228,24 @@ void sftp_win_term_paint(HWND hWnd)
 
 void add_line_text(char *text)
 {
+	int pos = strcspn(text, "\n");
+	text[pos] = '\0';
 	if ( (last_line < MAX_LINE - 1) 
 		&& (strlen(text) < MAX_ONE_LINE_CHAR)
 		)
 	{
 		strcpy(lines[++last_line], text); 
 		//PostMessage(g_hWnd, WM_PAINT, NULL, NULL);
-		//RedrawWindow(g_hWnd, NULL, NULL, RDW_INTERNALPAINT);
-		InvalidateRect(g_hWnd, NULL, false);
+		//RedrawWindow(g_hWnd, NULL, NULL, RDW_INTERNALPAINT); 
+
+
+		si.nPos = last_line - cyClient / cyChar + 1;
+		si.fMask = SIF_POS;
+		SetScrollInfo(g_hWnd, SB_VERT, &si, TRUE); 
+		ScrollWindow(g_hWnd, 0, cyChar * si.nPos, NULL, NULL);  
+
+
+		//InvalidateRect(g_hWnd, NULL, false);
 	}
 	
 }
@@ -321,7 +331,8 @@ void do_key_input(WPARAM wParam, LPARAM lParam)
 		struct sftp_command *cmd;
 		cmd = sftp_getcmd(strcmd, 0, 0, 0);
 		ret = cmd->obey(cmd);
-
+		add_line_text("psftp>");
+		
 		//Çå³ý
 		memset(strcmd, 0, 512);
 		pos = 0;
@@ -329,5 +340,48 @@ void do_key_input(WPARAM wParam, LPARAM lParam)
 	else
 	{
 		strcmd[pos++] = wParam;
+		int len = strlen(lines[last_line]);
+		*(char*)(lines[last_line]+ len) = wParam;
+		InvalidateRect(g_hWnd, NULL, false);
 	}
 }
+
+
+INT WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
+{
+	int ret;
+
+	dll_hijacking_protection();
+
+	//ret = psftp_main(argc, argv);
+	WINTERM   WinTerm = {
+	sftp_win_create,
+	sftp_win_resize,
+	sftp_win_set_pos,
+	sftp_win_set_visible,
+	sftp_win_term_paint,
+	NULL
+	};
+
+
+	HWND hWnd = WinTerm.create(NULL, hInstance);
+	WinTerm.set_visible(hWnd, true);
+	RECT rt = { 0 };
+	GetWindowRect(GetDesktopWindow(), &rt);
+	WinTerm.resize(hWnd, &rt);
+	//WinTerm.set_pos(hWnd, 0, 0, rt.right - rt.left, rt.bottom - rt.top);
+
+	DWORD threadid;
+	//CreateThread(0, 0, thead_do_sftp, &WinTerm, 0, &threadid);
+
+
+	//MSG msg; 
+	//while ( ret = GetMessage(&msg, NULL, 0, 0) )
+	//{
+	//	TranslateMessage(&msg);
+	//	DispatchMessage(&msg);
+	//}
+
+	return start_sftp();
+}
+

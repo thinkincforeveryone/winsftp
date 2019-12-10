@@ -420,6 +420,7 @@ static void stripctrl_locale_BinarySink_write(
 
 out:
     setlocale(LC_CTYPE, old_previous_locale);
+	sfree(old_previous_locale);
 }
 
 static void stripctrl_term_BinarySink_write(

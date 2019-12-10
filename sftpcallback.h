@@ -28,8 +28,7 @@ typedef struct tagWINTERM
 	BOOL(*set_pos)(HWND, int, int, int, int);
 	void(*set_visible)(HWND, BOOL); 
 	void(*term_paint)(HWND);
-	HWND hWnd;
-	unsigned int iMaxPage; //最大多少页（屏）
+	HWND hWnd; 
 }WINTERM;
 
 
