@@ -20,7 +20,7 @@ TCHAR szBuffer[10];
 TEXTMETRIC tm;
 char *lines[MAX_LINE];
 unsigned int last_line = 0;
-HWND g_hWnd = NULL;
+
 
 void initLines()
 {
@@ -95,7 +95,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				NULL, NULL);
 			UpdateWindow(hWnd);
 		}
-		return 0;
+		return 0; 
+	case WM_CHAR:  
+		do_key_input(wParam, lParam);
+		break;
 
 	case WM_PAINT:
 		sftp_win_term_paint(hWnd);
@@ -208,9 +211,8 @@ void sftp_win_term_paint(HWND hWnd)
 		y = cyChar * (i - iVertPos);
 		len = strlen(lines[i]);
 		if (len > 0)
-		{
-			
-			TextOut(hdc, x, y, lines[i], len-1);
+		{ 
+			TextOut(hdc, x, y, lines[i], len);
 			SetTextAlign(hdc, TA_LEFT | TA_TOP);
 		}
 		
@@ -248,7 +250,7 @@ DWORD WINAPI thead_do_sftp(LPVOID lpThreadParameter)
 	
 }
 
-void start_sftp()
+int start_sftp()
 {
 
 	int argc = 8;
@@ -271,7 +273,7 @@ void start_sftp()
 	memcpy(argv[6], pass, strlen(pass));
 	memcpy(argv[7], host, strlen(host));
 
-	psftp_main(argc, argv);
+	return psftp_main(argc, argv);
 }
 
 int psft_printf(char const* const format, ...)
@@ -287,4 +289,45 @@ int psft_printf(char const* const format, ...)
 		add_line_text(buffer);
 	}
 	return result;
+}
+
+int do_loop(HWND hWnd)
+{
+	MSG msg;
+	int ret;
+	while (ret = GetMessage(&msg, hWnd, 0, 0))
+	{
+		if (ret <= -1) // error
+		{
+			return ret;
+		}
+		else
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+	}
+	return msg.wParam;
+}
+
+void do_key_input(WPARAM wParam, LPARAM lParam)
+{
+	static char strcmd[512] = { 0 };
+	static int pos = 0;
+	if (wParam == 13)
+	{
+		//´¦Àí
+		int ret;
+		struct sftp_command *cmd;
+		cmd = sftp_getcmd(strcmd, 0, 0, 0);
+		ret = cmd->obey(cmd);
+
+		//Çå³ý
+		memset(strcmd, 0, 512);
+		pos = 0;
+	}
+	else
+	{
+		strcmd[pos++] = wParam;
+	}
 }

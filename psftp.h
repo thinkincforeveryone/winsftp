@@ -226,4 +226,16 @@ void list_directory_from_sftp_free(struct list_directory_from_sftp_ctx *ctx);
 void list_directory_from_sftp_warn_unsorted(void);
 void list_directory_from_sftp_print(struct fxp_name *name);
 
+/* ----------------------------------------------------------------------
+ * Actual sftp commands.
+ */
+struct sftp_command
+{
+	char **words;
+	size_t nwords, wordssize;
+	int(*obey) (struct sftp_command *);        /* returns <0 to quit */
+};
+
+struct sftp_command *sftp_getcmd(char *strcmd, FILE *fp, int mode, int modeflags);
+
 #endif /* PUTTY_PSFTP_H */

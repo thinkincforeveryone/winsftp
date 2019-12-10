@@ -14,6 +14,7 @@
 #include "storage.h"
 #include "ssh.h"
 #include "sftp.h"
+#include "sftpcallback.h"
 
 const char *const appname = "PSFTP";
 
@@ -1066,15 +1067,7 @@ bool is_wildcard(char *name)
     return is_wc;
 }
 
-/* ----------------------------------------------------------------------
- * Actual sftp commands.
- */
-struct sftp_command
-{
-    char **words;
-    size_t nwords, wordssize;
-    int (*obey) (struct sftp_command *);        /* returns <0 to quit */
-};
+
 
 int sftp_cmd_null(struct sftp_command *cmd)
 {
@@ -2417,7 +2410,7 @@ static int sftp_cmd_help(struct sftp_command *cmd)
 /* ----------------------------------------------------------------------
  * Command line reading and parsing.
  */
-struct sftp_command *sftp_getcmd(FILE *fp, int mode, int modeflags)
+struct sftp_command *sftp_getcmd(char *strcmd, FILE *fp, int mode, int modeflags)
 {
     char *line;
     struct sftp_command *cmd;
@@ -2439,7 +2432,8 @@ struct sftp_command *sftp_getcmd(FILE *fp, int mode, int modeflags)
     }
     else
     {
-		line = NULL; // ssh_sftp_get_cmdline("psftp> ", !backend);
+		line = snewn(256, char); // ssh_sftp_get_cmdline("psftp> ", !backend);
+		strcpy(line, strcmd);
     }
 
     if (!line || !*line)
@@ -2629,7 +2623,7 @@ int do_sftp(int mode, int modeflags, char *batchfile)
         while (1)
         {
             struct sftp_command *cmd;
-            cmd = sftp_getcmd(NULL, 0, 0);
+            //cmd = sftp_getcmd(NULL, 0, 0);
             if (!cmd)
                 break;
             ret = cmd->obey(cmd);
@@ -2657,7 +2651,7 @@ int do_sftp(int mode, int modeflags, char *batchfile)
         while (1)
         {
             struct sftp_command *cmd;
-            cmd = sftp_getcmd(fp, mode, modeflags);
+            //cmd = sftp_getcmd(fp, mode, modeflags);
             if (!cmd)
                 break;
             ret = cmd->obey(cmd);
@@ -3194,8 +3188,9 @@ int psftp_main(int argc, char *argv[])
 		psft_printf("psftp: no hostname specified; use \"open host.name\""
                " to connect\n");
     }
-
-    ret = do_sftp(mode, modeflags, batchfile);
+	
+    //ret = do_sftp(mode, modeflags, batchfile);
+	ret = do_loop(g_hWnd);
 
     if (backend && backend_connected(backend))
     {

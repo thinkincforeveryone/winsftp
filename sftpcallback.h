@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <Windows.h>
 
-
+HWND g_hWnd;
 
 HWND sftp_win_create(HWND parent, HINSTANCE hInstance);
 BOOL sftp_win_resize(HWND hWnd, const RECT* rt); 
@@ -14,8 +14,12 @@ void sftp_win_term_paint(HWND hWnd);
 void add_line_text(char *text); 
 
  DWORD  WINAPI thead_do_sftp( LPVOID lpThreadParameter );
- void start_sftp();
+ int start_sftp();
  int psft_printf(char const* const _Format, ...);
+ int do_loop(HWND hWnd);
+ void do_key_input(WPARAM wParam, LPARAM lParam);
+
+
 
 typedef struct tagWINTERM
 {
