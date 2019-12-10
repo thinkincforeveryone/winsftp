@@ -745,12 +745,13 @@ struct command_read_ctx
     char *line;
 };
 
+static char *dir = "dir";
 static DWORD WINAPI command_read_thread(void *param)
 {
     struct command_read_ctx *ctx = (struct command_read_ctx *) param;
-
-    ctx->line = fgetline(stdin);
-
+	Sleep(10);
+	ctx->line = snewn(256, char);// fgetline(stdin);
+	strcpy(ctx->line, dir);
     SetEvent(ctx->event);
 
     return 0;
@@ -763,8 +764,8 @@ char *ssh_sftp_get_cmdline(const char *prompt, bool no_fds_ok)
     DWORD threadid;
     HANDLE hThread;
 
-    fputs(prompt, stdout);
-    fflush(stdout);
+    psft_printf(prompt);
+    //fflush(stdout);
 
     if ((sftp_ssh_socket == INVALID_SOCKET && no_fds_ok) ||
             p_WSAEventSelect == NULL)
@@ -849,6 +850,10 @@ INT WINAPI WinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
 	WinTerm.resize(hWnd, &rt);
 	//WinTerm.set_pos(hWnd, 0, 0, rt.right - rt.left, rt.bottom - rt.top);
 	
+	DWORD threadid;
+	//CreateThread(0, 0, thead_do_sftp, &WinTerm, 0, &threadid);
+	start_sftp();
+
 	MSG msg; 
 	while ( ret = GetMessage(&msg, NULL, 0, 0) )
 	{

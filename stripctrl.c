@@ -329,6 +329,8 @@ static void stripctrl_locale_BinarySink_write(
     const char *p = (const char *)vp;
 
     const char *previous_locale = setlocale(LC_CTYPE, NULL);
+	char *old_previous_locale = snewn(1024, char);
+	strcpy(old_previous_locale, previous_locale);
     setlocale(LC_CTYPE, "");
 
     /*
@@ -417,7 +419,7 @@ static void stripctrl_locale_BinarySink_write(
     scc->buflen = len;
 
 out:
-    setlocale(LC_CTYPE, previous_locale);
+    setlocale(LC_CTYPE, old_previous_locale);
 }
 
 static void stripctrl_term_BinarySink_write(

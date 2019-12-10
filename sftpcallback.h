@@ -11,6 +11,11 @@ BOOL sftp_win_set_pos(HWND hWnd, int x, int y, int width, int height);
 void sftp_win_set_visible(HWND hWnd, BOOL bVisible); 
 void sftp_win_term_paint(HWND hWnd);
 
+void add_line_text(char *text); 
+
+ DWORD  WINAPI thead_do_sftp( LPVOID lpThreadParameter );
+ void start_sftp();
+ int psft_printf(char const* const _Format, ...);
 
 typedef struct tagWINTERM
 {
